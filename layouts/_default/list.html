@@ -1,8 +1,17 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  <div class="video-list flex">
+    {{ range .Pages }}
+      <div class="video-card items">
+        <a href="{{ .RelPermalink }}">
+          <div class="video-thumbnail">
+            <img src="https://img.doodcdn.co/snaps/{{ .Params.cover }}" alt="{{ .Params.title }}">
+          </div>
+          <div class="video-title">{{ .LinkTitle }}</div>
+          <div class="video-details">{{ .Params.foldername }} - {{ dateFormat "02 Jan 2006" .Date }}</div>
+        </a>
+      </div>
+    {{ end }}
+  </div>
 {{ end }}

@@ -1,4 +1,4 @@
-/* Variabel */
+/** Variabel **/
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -49,7 +49,7 @@ body {
 a {
   text-decoration: none; }
 
-/* Header */
+/** Header **/
 .header {
   background-color: #00ff00;
   color: #000;
@@ -57,16 +57,21 @@ a {
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
-  border-bottom: 5px solid #000; }
+  border-bottom: 5px solid #000;
+  transition: background-color 0.3s; }
+  .header:hover {
+    background-color: #33ff33; }
 
-/* Search Bar */
+/** Search Bar **/
 .search-bar {
   display: flex;
   padding: 10px;
-  margin: 10px 0;
   background-color: #7A1CAC;
   border: 3px solid #000;
-  border-width: 3px 0; }
+  border-width: 3px 0;
+  transition: background-color 0.3s; }
+  .search-bar:hover {
+    background-color: #9923d8; }
   .search-bar input[type="text"] {
     flex: 1;
     padding: 10px;
@@ -74,7 +79,10 @@ a {
     border: 2px solid #000;
     background-color: #ffb6b1;
     color: #000;
-    outline: none; }
+    outline: none;
+    transition: background-color 0.3s; }
+    .search-bar input[type="text"]:hover {
+      background-color: #ffe6e4; }
   .search-bar button {
     padding: 10px;
     font-size: 1rem;
@@ -83,18 +91,20 @@ a {
     font-weight: bold;
     color: #000;
     cursor: pointer;
-    margin-left: 5px; }
+    margin-left: 5px;
+    transition: background-color 0.3s, transform 0.2s; }
+    .search-bar button:hover {
+      background-color: #ffff33; }
 
-/* Container */
+/** Container **/
 .container {
-  /* Variabel warna brutalism */
-  /* Style Tags Brutalism */
-  /* Contoh HTML untuk memanggil style */ }
+  /** Variabel warna brutalism **/
+  /** Style Tags Brutalism **/ }
   .container .flex {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    padding: 8px;
+    padding: 0.5rem;
     max-width: 1200px;
     margin: 0 auto; }
   .container .items {
@@ -102,7 +112,10 @@ a {
     background-color: #f2f2f2;
     padding: 3px;
     border: 2px solid #000;
-    box-shadow: 5px 5px 0 #000; }
+    box-shadow: 4px 4px 0 black;
+    transition: background-color 0.3s, transform 0.2s; }
+    .container .items:hover {
+      background-color: #ffa; }
     @media (min-width: 768px) {
       .container .items {
         flex: 1 1 calc(25% - 8px); } }
@@ -118,14 +131,27 @@ a {
     justify-content: center;
     height: 180px;
     border: 2px solid #000;
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: transform 0.2s; }
+    .container .video-thumbnail:hover {
+      transform: scale(1.03); }
+  .container .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
   .container .video-title {
     font-size: 0.8em;
     font-weight: bold;
     margin: 8px 0;
     line-height: 1.2;
     border-bottom: 2px solid #000;
-    padding-bottom: 4px; }
+    padding-bottom: 4px;
+    transition: color 0.3s;
+    text-align: center;
+    padding: 8px; }
+    .container .video-title:hover {
+      color: #333333; }
   .container .download {
     font-size: 18px;
     font-weight: bold;
@@ -134,9 +160,12 @@ a {
     border: 2px solid black;
     box-shadow: 4px 4px 0 black;
     margin: 8px;
-    background-color: #387478; }
+    background-color: #387478;
+    transition: background-color 0.3s, transform 0.2s; }
     .container .download a {
       color: white; }
+    .container .download:hover {
+      background-color: #50a6ac; }
   .container .video-details {
     font-size: 0.7em;
     color: #333;
@@ -149,13 +178,17 @@ a {
       justify-content: space-between; }
       .container .video-details ul li {
         padding: 4px;
-        box-shadow: 2px 2px 0 black;
+        box-shadow: 4px 4px 0 black;
         text-align: center;
         border: 2px solid black;
         width: 30%;
         margin: 8px 0;
         background-color: orange;
-        font-weight: bold; }
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.2s; }
+        .container .video-details ul li:hover {
+          background-color: #ffb733;
+          transform: scale(1.05); }
   .container .tag-list {
     display: flex;
     flex-wrap: wrap;
@@ -167,34 +200,13 @@ a {
       font-size: 0.6rem;
       font-weight: bold;
       color: #000;
-      background-color: #ff69b4;
+      background-color: #ffdd00;
       border: 2px solid #000;
-      text-transform: uppercase;
+      text-transform: lowercase;
       text-align: center;
-      box-shadow: 2px 2px 0 black;
+      box-shadow: 4px 4px 0 black;
       transition: transform 0.1s ease-in-out;
       cursor: pointer; }
       .container .tag-list .tag:hover {
-        transform: scale(1.05) rotate(-1.1deg);
-        background-color: #ff9cce;
+        background-color: #ffe433;
         box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3); }
-
-.video-thumbnail {
-  width: 100%;
-  /* Sesuaikan dengan lebar container */
-  height: 180px;
-  /* Tinggi tetap untuk keseragaman */
-  overflow: hidden;
-  /* Menyembunyikan bagian gambar yang lebih besar dari kontainer */
-  display: flex;
-  /* Untuk mengatur gambar di tengah */
-  align-items: center;
-  justify-content: center; }
-
-.video-thumbnail img {
-  width: 100%;
-  /* Menyesuaikan gambar agar lebar penuh */
-  height: 100%;
-  /* Menyesuaikan tinggi gambar */
-  object-fit: cover;
-  /* Gambar akan menutupi kontainer secara proporsional */ }

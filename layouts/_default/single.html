@@ -15,10 +15,9 @@
   </div>
 </div>
 <div class="downloader">
-  <div class="download"><a href="https://d000d.com/d/{{ .Params.file_code }}">Download</a></div>
-  <ul class="tag-list">
+  <div class="download"><a href="https://d000d.com/d/{{ .Params.file_code }}">Download</a></div><ul class="tag-list">
   {{ range .Params.tags }}
-    <li class="tag">{{ . }}</li>
+    <li class="tag"><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
   {{ end }}
 </ul>
 </div>

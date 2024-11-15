@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Smp Pulang Sekolah Pap Buat Guru | My New Hugo Site</title>
+
+
+
+<style>/** Variabel **/
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+* {
+  margin: 0; }
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; }
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%; }
+
+input, button, textarea, select {
+  font: inherit; }
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word; }
+
+p {
+  text-wrap: pretty; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance; }
+
+#root, #__next {
+  isolation: isolate; }
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px; }
+
+@media (min-width: 768px) {
+  .video-list {
+    grid-template-columns: repeat(4, 1fr); } }
+
+body {
+  font-family: "Roboto Mono", monospace; }
+
+a {
+  text-decoration: none; }
+
+/** Header **/
+.header {
+  background-color: #00ff00;
+  color: #000;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 5px solid #000;
+  transition: background-color 0.3s; }
+  .header:hover {
+    background-color: #33ff33; }
+
+/** Search Bar **/
+.search-bar {
+  display: flex;
+  padding: 10px;
+  background-color: #7A1CAC;
+  border: 3px solid #000;
+  border-width: 3px 0;
+  transition: background-color 0.3s; }
+  .search-bar:hover {
+    background-color: #9923d8; }
+  .search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #000;
+    background-color: #ffb6b1;
+    color: #000;
+    outline: none;
+    transition: background-color 0.3s; }
+    .search-bar input[type="text"]:hover {
+      background-color: #ffe6e4; }
+  .search-bar button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #000;
+    background-color: #ff0;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s, transform 0.2s; }
+    .search-bar button:hover {
+      background-color: #ffff33; }
+
+/** Container **/
+.container {
+  /** Variabel warna brutalism **/
+  /** Style Tags Brutalism **/ }
+  .container .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0.5rem;
+    max-width: 1200px;
+    margin: 0 auto; }
+  .container .items {
+    flex: 1 1 calc(50% - 8px);
+    background-color: #f2f2f2;
+    padding: 3px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 black;
+    transition: background-color 0.3s, transform 0.2s; }
+    .container .items:hover {
+      background-color: #ffa; }
+    @media (min-width: 768px) {
+      .container .items {
+        flex: 1 1 calc(25% - 8px); } }
+  .container .video-link {
+    text-decoration: none;
+    color: #000; }
+  .container .video-thumbnail {
+    background-color: #ddd;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    border: 2px solid #000;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: transform 0.2s; }
+    .container .video-thumbnail:hover {
+      transform: scale(1.03); }
+  .container .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .container .video-title {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 8px 0;
+    line-height: 1.2;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+    text-align: center;
+    padding: 8px; }
+    .container .video-title:hover {
+      color: #333333; }
+  .container .download {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 black;
+    margin: 8px;
+    background-color: #387478;
+    transition: background-color 0.3s, transform 0.2s; }
+    .container .download a {
+      color: white; }
+    .container .download:hover {
+      background-color: #50a6ac; }
+  .container .video-details {
+    font-size: 0.7em;
+    color: #333;
+    line-height: 1.3; }
+    .container .video-details ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: space-between; }
+      .container .video-details ul li {
+        padding: 4px;
+        box-shadow: 4px 4px 0 black;
+        text-align: center;
+        border: 2px solid black;
+        width: 30%;
+        margin: 8px 0;
+        background-color: orange;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.2s; }
+        .container .video-details ul li:hover {
+          background-color: #ffb733;
+          transform: scale(1.05); }
+  .container .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    padding: 8px; }
+    .container .tag-list .tag {
+      padding: 2px 4px;
+      font-size: 0.6rem;
+      font-weight: bold;
+      color: #000;
+      background-color: #ff69b4;
+      border: 2px solid #000;
+      text-transform: lowercase;
+      text-align: center;
+      box-shadow: 4px 4px 0 black;
+      transition: transform 0.1s ease-in-out;
+      cursor: pointer; }
+      .container .tag-list .tag:hover {
+        background-color: #ff9cce;
+        box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3); }
+</style>
+
+
+      <script src="/js/main.js"></script>
+
+
+</head>
+<body>
+  <header class="header">
+    Bokepsin
+  </header>
+   <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button class="items">Go</button>
+    </div>
+  <main class="container">
+    
+<div class="video-list flex">
+  <div class="video-card items">
+    <div class="video-thumbnail">
+      <iframe src="https://d000d.com/e/nv40x8b3zlw3" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-title">Smp Pulang Sekolah Pap Buat Guru</div>
+    <div class="video-details">
+      <ul>
+        <li>18 MB</li>
+        <li>18 Minute</li>
+        <li>28 Des 2024</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="downloader">
+  <div class="download"><a href="https://d000d.com/d/nv40x8b3zlw3">Download</a></div><ul class="tag-list">
+  
+    <li class="tag"><a href="/tags/smp">Smp</a></li>
+  
+    <li class="tag"><a href="/tags/pulang">Pulang</a></li>
+  
+    <li class="tag"><a href="/tags/sekolah">Sekolah</a></li>
+  
+    <li class="tag"><a href="/tags/pap">Pap</a></li>
+  
+    <li class="tag"><a href="/tags/buat">Buat</a></li>
+  
+    <li class="tag"><a href="/tags/guru">Guru</a></li>
+  
+</ul>
+</div>
+
+
+
+
+
+
+  
+  
+
+  
+  
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+  
+    
+      
+      
+    
+    
+      
+
+  
+
+
+<div class="video-list flex">
+  
+    <div class="video-card items">
+      <a href="/posts/17-pee/analvids-23-03-09-brittany-bardot-all-in-bbc-gang-bang-wet-brittany-bardot-7on1-bbc-dap-gapes-buttrose-pee-drink-gio2416-xxx-1080p-mp4-pxxbay/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/7vjvdlw1q0haurpm.jpg" alt="AnalVids 23 03 09 Brittany Bardot All In BBC Gang Bang Wet Brittany Bardot 7on1 BBC DAP Gapes ButtRose Pee Drink GIO2416 XXX 1080p MP4-PXXBAY">
+        </div>
+        <div class="video-title">AnalVids 23 03 09 Brittany Bardot All In BBC Gang Bang Wet Brittany Bardot 7on1 BBC DAP Gapes ButtRose Pee Drink GIO2416 XXX 1080p MP4-PXXBAY</div>
+        <div class="video-details">17 pee - 15 Jun 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/10-mantap/gundik.xyz-6/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/whm3aijspp7t3dr9.jpg" alt="GUNDIK.xyz 6">
+        </div>
+        <div class="video-title">GUNDIK.xyz 6</div>
+        <div class="video-details">10 mantap - 28 Jun 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/10-mantap/gundik.xyz-7/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/zaq7inuiotmv8rka.jpg" alt="GUNDIK.xyz 7">
+        </div>
+        <div class="video-title">GUNDIK.xyz 7</div>
+        <div class="video-details">10 mantap - 09 Aug 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/09-3/pulang-sekolah/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/hz8nayw63z0db3dp.jpg" alt="Pulang sekolah">
+        </div>
+        <div class="video-title">Pulang sekolah</div>
+        <div class="video-details">09-3 - 01 Nov 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/10-mantap/gundik.xyz-5/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/kctu2ukprbsup264.jpg" alt="Gundik.xyz 5">
+        </div>
+        <div class="video-title">Gundik.xyz 5</div>
+        <div class="video-details">10 mantap - 06 Oct 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/17-pee/chinaav-0083---chinese-porn---chinababe-net/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/vl7d7l6wa00b3ro7.jpg" alt="ChinaAV-0083 - Chinese Porn - CHINABABE NET">
+        </div>
+        <div class="video-title">ChinaAV-0083 - Chinese Porn - CHINABABE NET</div>
+        <div class="video-details">17 pee - 12 Aug 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/09-3/smp-pulang-sekolah-pap-buat-guru/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/074dmejimufegt6f.jpg" alt="Smp Pulang Sekolah Pap Buat Guru">
+        </div>
+        <div class="video-title">Smp Pulang Sekolah Pap Buat Guru</div>
+        <div class="video-details">09-3 - 26 Jul 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/09-3/kakak-adik-kandung-diem2-ngewe-didalem-wc/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/y6no66sq5qmiuvrb.jpg" alt="Kakak Adik Kandung Diem2 Ngewe Didalem WC">
+        </div>
+        <div class="video-title">Kakak Adik Kandung Diem2 Ngewe Didalem WC</div>
+        <div class="video-details">09-3 - 06 Nov 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/10-mantap/gundik.xyz-4/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/izbl2zds9b2b9o6n.jpg" alt="Gundik.xyz 4">
+        </div>
+        <div class="video-title">Gundik.xyz 4</div>
+        <div class="video-details">10 mantap - 24 May 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/09-3/pesan-cewek-michat-jilbab-full-percakapan-12-menit/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/eex6fp2e5ecm7yfn.jpg" alt="Pesan Cewek Michat Jilbab Full Percakapan 12 Menit">
+        </div>
+        <div class="video-title">Pesan Cewek Michat Jilbab Full Percakapan 12 Menit</div>
+        <div class="video-details">09-3 - 22 Aug 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/17-pee/peeping-chinese-tiongkok-amateur-upskirt30/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/1vz70lqafqob6fc4.jpg" alt="peeping chinese Tiongkok amateur upskirt30">
+        </div>
+        <div class="video-title">peeping chinese Tiongkok amateur upskirt30</div>
+        <div class="video-details">17 pee - 30 May 2024</div>
+      </a>
+    </div>
+  
+    <div class="video-card items">
+      <a href="/posts/09-3/ceweknya-bilang-anjing-masuk-banget/">
+        <div class="video-thumbnail">
+          <img src="https://img.doodcdn.co/snaps/6yccchdr9lhnh4vz.jpg" alt="Ceweknya Bilang Anjing Masuk Banget">
+        </div>
+        <div class="video-title">Ceweknya Bilang Anjing Masuk Banget</div>
+        <div class="video-details">09-3 - 04 Oct 2024</div>
+      </a>
+    </div>
+  
+</div>
+
+
+  </main>
+  <footer>
+    <p>Copyright 2024. All rights reserved.</p>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const colors = ["#ff69b4", "#ffdd00", "#00ff00", "#00ffff", "#ff4500",
+    "#ff69b4", 
+    "#ffdd00", 
+    "#00ff00", 
+    "#00ffff", 
+    "#ff4500", 
+    "#ff1493", 
+    "#1e90ff", 
+    "#ff6347", 
+    "#32cd32", 
+    "#ff8c00", 
+    "#ffd700", 
+    "#7fffd4", 
+    "#dc143c", 
+    "#8a2be2", 
+    "#ff00ff"  
+];
+    const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+
+    
+    const applyHoverEffect = (selector) => {
+        document.querySelectorAll(selector).forEach(element => {
+            element.addEventListener("mouseover", () => {
+                element.style.backgroundColor = getRandomColor();
+            });
+            element.addEventListener("mouseout", () => {
+                element.style.backgroundColor = "";
+            });
+        });
+    };
+
+    
+    
+    
+    
+});
+</script>
+  </footer>
+</body>
+</html>

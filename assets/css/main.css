@@ -1,4 +1,4 @@
-/* Variabel */
+/** Variabel **/
 $backgrounds: (
   main: #fefefe,
   header: #00ff00,
@@ -13,6 +13,7 @@ $borders: (
   thick: 5px solid $color-main,
   thin: 2px solid $color-main
 );
+$box-shadow : 4px 4px 0 black;
 
 @import "reset";
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -25,7 +26,7 @@ a {
   text-decoration: none;
 }
 
-/* Header */
+/** Header **/
 .header {
   background-color: map-get($backgrounds, header);
   color: $color-main;
@@ -34,16 +35,25 @@ a {
   font-size: 1.2rem;
   font-weight: bold;
   border-bottom: map-get($borders, thick);
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: lighten(map-get($backgrounds, header), 10%);
+  }
 }
 
-/* Search Bar */
+/** Search Bar **/
 .search-bar {
   display: flex;
   padding: 10px;
-  margin: 10px 0;
   background-color: map-get($backgrounds, search);
   border: 3px solid $color-main;
   border-width: 3px 0;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: lighten(map-get($backgrounds, search), 10%);
+  }
 
   input[type="text"] {
     flex: 1;
@@ -53,6 +63,11 @@ a {
     background-color: map-get($backgrounds, input);
     color: $color-main;
     outline: none;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: lighten(map-get($backgrounds, input), 10%);
+    }
   }
 
   button {
@@ -64,16 +79,22 @@ a {
     color: $color-main;
     cursor: pointer;
     margin-left: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: lighten(map-get($backgrounds, button), 10%);
+      
+    }
   }
 }
 
-/* Container */
+/** Container **/
 .container {
   .flex {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    padding: 8px;
+    padding: 0.5rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -83,7 +104,12 @@ a {
     background-color: #f2f2f2;
     padding: 3px;
     border: 2px solid $color-main;
-    box-shadow: 5px 5px 0 $color-main;
+    box-shadow: $box-shadow;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: map-get($backgrounds, hover-card);
+    }
 
     @media (min-width: 768px) {
       flex: 1 1 calc(25% - 8px);
@@ -105,6 +131,18 @@ a {
     height: 180px;
     border: 2px solid $color-main;
     margin-bottom: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .video-title {
@@ -114,19 +152,33 @@ a {
     line-height: 1.2;
     border-bottom: 2px solid $color-main;
     padding-bottom: 4px;
+    transition: color 0.3s;
+    text-align: center;
+    padding: 8px;
+
+    &:hover {
+      color: lighten($color-main, 20%);
+    }
   }
-  
-  .download{
+
+  .download {
     font-size: 18px;
     font-weight: bold;
     padding: 8px;
     text-align: center;
     border: 2px solid black;
-    box-shadow: 4px 4px 0 black;
+    box-shadow: $box-shadow;
     margin: 8px;
     background-color: #387478;
-    a{
-      color : white;
+    transition: background-color 0.3s, transform 0.2s;
+
+    a {
+      color: white;
+    }
+
+    &:hover {
+      background-color: lighten(#387478, 15%);
+      
     }
   }
 
@@ -140,77 +192,67 @@ a {
       margin: 0;
       padding: 0;
       justify-content: space-between;
-      li{
+      li {
         padding: 4px;
-        box-shadow: 2px 2px 0 black;
+        box-shadow: $box-shadow;
         text-align: center;
         border: 2px solid black;
         width: 30%;
         margin: 8px 0;
         background-color: orange;
         font-weight: bold;
+        transition: background-color 0.3s, transform 0.2s;
+
+        &:hover {
+          background-color: lighten(orange, 10%);
+          transform: scale(1.05);
+        }
       }
     }
-    
   }
-/* Variabel warna brutalism */
 
-$bg-colors: (
-  "pink": #ff69b4,
-  "yellow": #ffdd00,
-  "green": #00ff00,
-  "cyan": #00ffff,
-  "orange": #ff4500
-);
-$border-color: #000;
-$text-color: #000;
-$shadow-color: rgba(0, 0, 0, 0.3); // Warna shadow
+  /** Variabel warna brutalism **/
 
-/* Style Tags Brutalism */
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  list-style: none;
-  padding: 8px;
+  $bg-colors: (
+    "pink": #ff69b4,
+    "yellow": #ffdd00,
+    "green": #00ff00,
+    "cyan": #00ffff,
+    "orange": #ff4500
+  );
+  $border-color: #000;
+  $text-color: #000;
+  $shadow-color: rgba(0, 0, 0, 0.3); // Warna shadow
 
-  .tag {
-    padding: 2px 4px; // Ukuran lebih kecil
-    font-size: 0.6rem; // Font lebih kecil
-    font-weight: bold;
-    color: $text-color;
-    background-color: nth(map-values($bg-colors), random(length($bg-colors)));
-    border: 2px solid $border-color; // Border lebih tipis
-    text-transform: uppercase;
-    text-align: center;
-    box-shadow: 2px 2px 0 black; // Shadow kasar
-    transition: transform 0.1s ease-in-out;
-    cursor: pointer;
+  /** Style Tags Brutalism **/
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    padding: 8px;
+    
+    
 
-    &:hover {
-      transform: scale(1.05) rotate(-1.1deg); // Sedikit rotasi dan skala kecil
-      background-color: lighten(nth(map-values($bg-colors), random(length($bg-colors))), 10%);
-      box-shadow: 6px 6px 0 $shadow-color; // Shadow lebih kuat saat hover
+    .tag {
+      padding: 2px 4px; // Ukuran lebih kecil
+      font-size: 0.6rem; // Font lebih kecil
+      font-weight: bold;
+      color: $text-color;
+      background-color: nth(map-values($bg-colors), random(length($bg-colors)));
+      border: 2px solid $border-color; // Border lebih tipis
+      text-transform: lowercase;
+      text-align: center;
+      box-shadow: $box-shadow; // Shadow kasar
+      transition: transform 0.1s ease-in-out;
+      cursor: pointer;
+    
+
+      &:hover {
+        
+        background-color: lighten(nth(map-values($bg-colors), random(length($bg-colors))), 10%);
+        box-shadow: 6px 6px 0 $shadow-color; // Shadow lebih kuat saat hover
+      }
     }
   }
-}
-
-
-
-
-/* Contoh HTML untuk memanggil style */
-
-}.video-thumbnail {
-  width: 100%;            /* Sesuaikan dengan lebar container */
-  height: 180px;          /* Tinggi tetap untuk keseragaman */
-  overflow: hidden;       /* Menyembunyikan bagian gambar yang lebih besar dari kontainer */
-  display: flex;          /* Untuk mengatur gambar di tengah */
-  align-items: center;
-  justify-content: center;
-}
-
-.video-thumbnail img {
-  width: 100%;            /* Menyesuaikan gambar agar lebar penuh */
-  height: 100%;           /* Menyesuaikan tinggi gambar */
-  object-fit: cover;      /* Gambar akan menutupi kontainer secara proporsional */
 }
