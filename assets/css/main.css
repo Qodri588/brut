@@ -90,6 +90,9 @@ a {
 
 /** Container **/
 .container {
+  @media (min-width: 768px) {
+    padding : 0 3rem;
+  }
   .flex {
     display: flex;
     flex-wrap: wrap;
@@ -160,7 +163,9 @@ a {
       color: lighten($color-main, 20%);
     }
   }
-
+  .downloader{
+    padding: 8px;
+  }
   .download {
     font-size: 18px;
     font-weight: bold;
