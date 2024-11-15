@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ range site.RegularPages }}
+  <div class="video-list flex">
+  <div class="video-card items">
+    <a href="{{ .RelPermalink }}">
+    <div class="video-thumbnail"></div>
+      <div class="video-title">{{ .LinkTitle }}</div>
+            <div class="video-details">Channel Name - 1M views - 1 day ago</div>
+            </a>
+    </div>
+  </div>
+  {{ end }}
+  {{ partial "related.html" . }}
+  
+  
+{{ end }}

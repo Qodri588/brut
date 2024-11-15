@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="video-list flex">
+  <div class="video-card items">
+    <div class="video-thumbnail">
+      <iframe src="https://d000d.com/e/{{ .Params.file_code }}" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-title">{{ .LinkTitle }}</div>
+    <div class="video-details">
+      <ul>
+        <li>18 MB</li>
+        <li>18 Minute</li>
+        <li>28 Des 2024</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="downloader">
+  <div class="download"><a href="https://d000d.com/d/{{ .Params.file_code }}">Download</a></div>
+  <ul class="tag-list">
+  {{ range .Params.tags }}
+    <li class="tag">{{ . }}</li>
+  {{ end }}
+</ul>
+</div>
+
+
+{{ partial "related" . }}
+{{ end }}

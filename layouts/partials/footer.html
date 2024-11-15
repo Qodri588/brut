@@ -1,0 +1,40 @@
+<p>Copyright {{ now.Year }}. All rights reserved.</p>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const colors = ["#ff69b4", "#ffdd00", "#00ff00", "#00ffff", "#ff4500",
+    "#ff69b4", // Hot Pink
+    "#ffdd00", // Bright Yellow
+    "#00ff00", // Neon Green
+    "#00ffff", // Cyan
+    "#ff4500", // Orange Red
+    "#ff1493", // Deep Pink
+    "#1e90ff", // Dodger Blue
+    "#ff6347", // Tomato
+    "#32cd32", // Lime Green
+    "#ff8c00", // Dark Orange
+    "#ffd700", // Gold
+    "#7fffd4", // Aquamarine
+    "#dc143c", // Crimson
+    "#8a2be2", // Blue Violet
+    "#ff00ff"  // Magenta
+];
+    const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+
+    // Fungsi untuk menerapkan efek hover dinamis
+    const applyHoverEffect = (selector) => {
+        document.querySelectorAll(selector).forEach(element => {
+            element.addEventListener("mouseover", () => {
+                element.style.backgroundColor = getRandomColor();
+            });
+            element.addEventListener("mouseout", () => {
+                element.style.backgroundColor = "";
+            });
+        });
+    };
+
+    // Terapkan efek hover ke elemen .tag dan .items
+    //applyHoverEffect("main");
+    
+    
+});
+</script>
